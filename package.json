@@ -1,0 +1,17 @@
+{
+  "name": "html-ppt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Benceszalaiii/HTML-PPT-Project.git"
+  },
+  "private": true,
+  "dependencies": {
+    "gsap": "^3.12.4"
+  }
+}

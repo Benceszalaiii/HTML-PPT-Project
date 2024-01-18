@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap");
+* {
+  margin: 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding: 0;
+}
+:root {
+  --h: 60vh;
+  --hue: 243.04;
+  --swatch-1: oklch(97.1% 0.05 var(--hue));
+  --swatch-10: oklch(20.91% 0.05 var(--hue));
+  --swatch-6: oklch(48.38% 0.11 var(--hue));
+  font-family: "Space Grotesk", sans-serif;
+  animation: 20s linear infinite hue-anim;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.fixed {
+  position: fixed;
+  top: 0;
+  height: 70px;
+  z-index: 1;
+}
+
+body {
+  color: #fff;
+  font-family: 'open-sans-bold', AvenirNext-Medium, sans-serif;
+  font-size: 18px;
+  text-align: center;
+}
+
+nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background: #fff;
+}
+
+nav li {
+  display: inline-block;
+  padding: 24px 10px;
+}
+
+nav li a {
+  color: #757575;
+  text-transform: uppercase;
+}
+
+.section100 {
+  height: 100vh;
+}
+.section60 {
+  height: 60vh;
+}
+
+#landingpage {
+  background: #c77dff;
+}
+
+#landingpage p {
+  padding-top: 200px;
+}
+
+.light {
+  background: #9d4edd;
+}
+
+.dark {
+  background: #e0aaff;
+}
+
+
+@property --hue {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 243.04;
+}
+@keyframes hue-anim {
+  from {
+    --hue: 360;
+  }
+  to {
+    --hue: -360;
+  }
+}
+
+
+.card {
+  display: grid;
+  gap: 1ch;
+  background: oklch(var(--l) 0.07 var(--hue));
+  max-width: 50vw;
+  margin: auto;
+  height: var(--h);
+}
+
+
+h2 {
+  margin-bottom: 0;
+}
+
+
+.section60.light {
+  --l: 87.24%;
+  left: 0;
+  background-color: var(--swatch-1);
+  color: var(--swatch-10);
+}
+.section60.dark {
+  --l: 27.82%;
+  right: 0;
+  color: var(--swatch-1);
+  background-color: var(--swatch-10);
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.left {
+  flex: 1;
+
+}
+.right {
+flex: 2;
+}
+.container > .card {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  min-height: var(--h);
+  min-width: 50%;
+  align-self: end;
+  transform: translate(-50%, -50%);
+}
