@@ -1,11 +1,36 @@
-$(document).ready(function(){
-    $(window).bind('scroll', function() {
-        var navHeight = $( window ).height() - 70;
-        if ($(window).scrollTop() > navHeight) {
-            $('nav').addClass('fixed');
-        }
-        else {
-            $('nav').removeClass('fixed');
-        }
+gsap.registerPlugin(ScrollTrigger);
+const def_start = "top center";
+const def_end = "bottom center";
+
+
+
+
+function createSplitScreenAnimation(textCard, codeCard, text_y, code_y) {
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: textCard,
+            start: def_start,
+            end: def_end,
+            scrub: true,
+            markers: true,
+
+        },
     });
-});
+
+    tl.to(textCard, {yPercent: text_y}, 0)
+        .to(codeCard, {yPercent: code_y}, 0);
+
+    ScrollTrigger.create({
+        trigger: textCard,
+        start: def_start,
+        endTrigger: textCard,
+        end: def_end,
+        pin: codeCard,
+        markers: true
+    });
+}
+
+// Sectiononkent letre kell hozni
+createSplitScreenAnimation("#textcard1", "#codeCard1", -15, -50);
+createSplitScreenAnimation("#textcard2", "#codeCard2", -15, 0);
+createSplitScreenAnimation("#textcard3", "#codeCard3", -15, 0);

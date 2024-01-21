@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Screen Article Animation</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .split-container {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            margin-bottom: 50px; /* Add some spacing between articles */
+        }
+
+        .text-container {
+            flex: 1;
+            overflow-y: scroll;
+            padding: 20px;
+        }
+
+        .image-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .parents {
+            margin-top: 248px;
+            background-color: lightsalmon;
+            height: 75vh;
+            display: flex;
+        }
+        .objectd {
+            background-color: #0a58ca;
+            width: 20vw;
+            height: 20vw;
+        }
+        .red {
+            background-color: red;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .green{
+            background-color: green;
+        }
+        .blue {
+            background-color: blue;
+        }
+
+
+    </style>
+</head>
+<body><div class="objectf"></div>
+<div class="parents">
+    <div class="objectd red"></div>
+    <div class="objectd blue"></div>
+    <div class="objectd yellow"></div>
+    <div class="objectd green"></div>
+</div>
+
+<script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/scrolltrigger-gsap@3.9.0/dist/ScrollTrigger.min.js"></script>
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    function createSplitScreenAnimation(textContainer, imageContainer, imageSrc) {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: textContainer,
+                start: "top top",
+                end: "bottom bottom",
+                scrub: true,
+            },
+        });
+
+        tl.to(textContainer, { xPercent: -100 })
+            .to(imageContainer, { xPercent: 100 }, 0);
+
+        ScrollTrigger.create({
+            trigger: textContainer,
+            start: "top top",
+            endTrigger: textContainer,
+            end: "bottom bottom",
+            pin: imageContainer,
+            pinSpacing: false,
+        });
+    }
+
+    // Create split-screen animations for each article
+    createSplitScreenAnimation("#article1 .text-container", "#article1 .image-container", "image1.jpg");
+    createSplitScreenAnimation("#article2 .text-container", "#article2 .image-container", "image2.jpg");
+</script>
+
+</body>
+</html>
