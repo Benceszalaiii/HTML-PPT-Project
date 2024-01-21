@@ -2,38 +2,227 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.11/skrollr.min.js">
+    <title>PyGame</title>
     <link rel="stylesheet" href="style.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="highlight/styles/a11y-light.min.css">
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+            crossorigin="anonymous"
+    />
 </head>
 <body>
-<section class="section100" id="landingpage">
+<!-- about -->
+<div class="about">
+    <a class="bg_links social portfolio" href="https://www.rafaelalucas.com" target="_blank">
+        <span class="icon"></span>
+    </a>
+    <a class="bg_links social dribbble" href="https://dribbble.com/rafaelalucas" target="_blank">
+        <span class="icon"></span>
+    </a>
+    <a class="bg_links social linkedin" href="https://www.linkedin.com/in/rafaelalucas/" target="_blank">
+        <span class="icon"></span>
+    </a>
+    <a class="bg_links logo"></a>
+</div>
 
-    <nav>
-        <ul>
-            <li><a href="#landingpage">Pygame</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-</section>
 
-<section class="container section60 light right">
-    <div class="card">
-        <h2>I'm a light card</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque doloremque modi veniam aspernatur voluptatum labore dolores perspiciatis.</p>
+<nav>
+    <div class="menu">
+        <p class="website_name">pygame</p>
+        <div class="menu_links">
+            <a href="https://www.pygame.org/docs/ref/sprite.html" target="_blank" class="link">Dokumentáció</a>
+            <a href="about.html" class="link">Csapattagok</a>
+            <a href="https://www.youtube.com/@sulipy" target="_blank" class="link">sulipy</a>
+        </div>
+        <div class="menu_icon">
+            <span class="icon"></span>
+        </div>
+    </div>
+</nav>
+
+<section class="wrapper">
+
+    <div class="container">
+
+        <div id="scene" class="scene" data-hover-only="false">
+
+
+            <div class="circle" data-depth="1.2"></div>
+
+            <div class="one" data-depth="0.9">
+                <div class="content">
+                    <span class="piece"></span>
+                    <span class="piece"></span>
+                    <span class="piece"></span>
+                </div>
+            </div>
+
+            <div class="two" data-depth="0.60">
+                <div class="content">
+                    <span class="piece"></span>
+                    <span class="piece"></span>
+                    <span class="piece"></span>
+                </div>
+            </div>
+
+            <div class="three" data-depth="0.40">
+                <div class="content">
+                    <span class="piece"></span>
+                    <span class="piece"></span>
+                    <span class="piece"></span>
+                </div>
+            </div>
+
+            <p class="p404" data-depth="0.50">pygame</p>
+            <p class="p404" data-depth="0.10">pygame</p>
+
+        </div>
+
+        <div class="text">
+            <article>
+                <p>5. Fejezet dokumentációja:<br>Spriteok</p>
+            </article>
+        </div>
     </div>
 </section>
-<section class="container section60 dark left">
 
-    <div class="card">
-        <h2>I'm a dark card</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias fuga neque placeat, similique deleniti doloremque distinctio et quam aspernatur, error non!</p>
-    </div>
-</section>
+<div id="wrapper">
+    <section class="section2" id="first">
+        <div class="textcard" id="textcard1">
+            <article>
+                <h1>Mi is az a sprite?</h1>
+                <p>In Pygame, a sprite is an object that represents a game element. It can be an image, animation, or any other visual element in a game. Pygame provides a Sprite class that you can use to create and manage sprites efficiently.
+                    <br><br>
+                    Here's a basic example of defining a Pygame sprite:In Pygame, a sprite is an object that represents a game element. It can be an image, animation, or any other visual element in a game. Pygame provides a Sprite class that you can use to create and manage sprites efficiently.
+                    <br><br>
+                    Here's a basic example of defining a Pygame sprite:In Pygame, a sprite is an object that represents a game element. It can be an image, animation, or any other visual element in a game. Pygame provides a Sprite class that you can use to create and manage sprites efficiently.
+                    <br><br>
+                    Here's a basic example of defining a Pygame sprite:In Pygame, a sprite is an object that represents a game element. It can be an image, animation, or any other visual element in a game. Pygame provides a Sprite class that you can use to create and manage sprites efficiently.
+                    <br><br>
+                    Here's a basic example of defining a Pygame sprite:In Pygame, a sprite is an object that represents a game element. It can be an image, animation, or any other visual element in a game. Pygame provides a Sprite class that you can use to create and manage sprites efficiently.
+                    <br><br>
+                    Here's a basic example of defining a Pygame sprite:In Pygame, a sprite is an object that represents a game element. It can be an image, animation, or any other visual element in a game. Pygame provides a Sprite class that you can use to create and manage sprites efficiently.
+                    <br><br>
+                    Here's a basic example of defining a Pygame sprite:In Pygame, a sprite is an object that represents a game element. It can be an image, animation, or any other visual element in a game. Pygame provides a Sprite class that you can use to create and manage sprites efficiently.
+                    <br><br>
+                    Here's a basic example of defining a Pygame sprite:</p>
+            </article>
+        </div>
+<div class="codecard" id="codeCard1">
+    <pre><code class="language-python">
+            class Block(pygame.sprite.Sprite):
+    def __init__(self, color, width, height):
+        pygame.sprite.Sprite.__init__(self)
+        self.image = pygame.Surface([width, height])
+        self.image.fill(color)
+        self.rect = self.image.get_rect()
+    </code>
+    </pre>
+</div>
+
+    </section>
+
+
+    <section class="section2" id="second">
+        <div class="textcard" id="textcard2">
+            <article>
+                <h1>Mi is az a sprite?</h1>
+                <p>In Pygame, a sprite is an object that represents a game element. It can be an image, animation, or any other visual element in a game. Pygame provides a Sprite class that you can use to create and manage sprites efficiently.
+                    <br><br>
+                    Here's a basic example of defining a Pygame sprite:</p>
+            </article>
+        </div>
+
+        <div class="codecard" id="codeCard2">
+    <pre><code class="language-python">class Block(pygame.sprite.Sprite):
+
+  # Constructor. Pass in the color of the block,
+  # and its x and y position
+  def __init__(self, color, width, height):
+     # Call the parent class (Sprite) constructor
+     pygame.sprite.Sprite.__init__(self)
+
+     # Create an image of the block, and fill it with a color.
+     # This could also be an image loaded from the disk.
+     self.image = pygame.Surface([width, height])
+     self.image.fill(color)
+
+     # Fetch the rectangle object that has the dimensions of the image
+     # Update the position of this object by setting the values of rect.x and rect.y
+     self.rect = self.image.get_rect()</code></pre>
+        </div>
+
+    </section>
+
+    <section class="section2" id="third">
+        <div class="textcard" id="textcard3">
+            <article>
+                <h1>Mi is az a sprite?</h1>
+                <p>In Pygame, a sprite is an object that represents a game element. It can be an image, animation, or any other visual element in a game. Pygame provides a Sprite class that you can use to create and manage sprites efficiently.
+                    <br><br>
+                    Here's a basic example of defining a Pygame sprite:</p>
+            </article>
+        </div>
+
+        <div class="codecard" id="codeCard3">
+    <pre><code class="language-python">class Block(pygame.sprite.Sprite):
+
+  # Constructor. Pass in the color of the block,
+  # and its x and y position
+  def __init__(self, color, width, height):
+     # Call the parent class (Sprite) constructor
+     pygame.sprite.Sprite.__init__(self)
+
+     # Create an image of the block, and fill it with a color.
+     # This could also be an image loaded from the disk.
+     self.image = pygame.Surface([width, height])
+     self.image.fill(color)
+
+     # Fetch the rectangle object that has the dimensions of the image
+     # Update the position of this object by setting the values of rect.x and rect.y
+     self.rect = self.image.get_rect()</code></pre>
+        </div>
+
+    </section>
+</div>
+
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/languages/python.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const body = document.body;
+        const startColor = [80, 25, 179];
+        const endColor = [17, 0, 32];
+        const windowHeight = window.innerHeight;
+
+        function lerp(start, end, t) {
+            return start * (1 - t) + end * t;
+        }
+
+        function handleScroll() {
+            const scrollPercentage = window.scrollY / (body.scrollHeight - windowHeight);
+            const interpolatedColor = [
+                Math.round(lerp(startColor[0], endColor[0], scrollPercentage)),
+                Math.round(lerp(startColor[1], endColor[1], scrollPercentage)),
+                Math.round(lerp(startColor[2], endColor[2], scrollPercentage))
+            ];
+
+            const backgroundColor = `rgb(${interpolatedColor.join(',')})`;
+            body.style.backgroundColor = backgroundColor;
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+    });
+</script>
+<script src="gsap/gsap.min.js"></script>
+<script src="gsap/ScrollTrigger.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
