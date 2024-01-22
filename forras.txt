@@ -1,0 +1,189 @@
+class pelda(pygame.sprite.Sprtie):
+
+
+
+
+class pelda(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        self.image = pygame.image.load('example.png').convert_alpha()
+        self.rect = self.image.get_rect(midbottom = (WIDTH / 2, HEIGHT - 100))
+        self.speed = 5
+
+
+
+
+pelda = pygame.sprite.Group.Single()
+pelda.add(Pelda())
+
+
+
+
+pelda.draw(screen)
+pelda.update()
+
+
+
+
+def pelda_input(self):
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_RIGHT] and self.rect.right < WIDTH:
+        self.x_movement(self.speed)
+    if keys[pygame.K_LEFT] and self.rect.left > 0:
+        self.x_movement(-self.speed)
+
+
+
+
+def x_movement(self, dx):
+    self.rect.x += dx
+
+
+
+    
+class pelda(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        pelda_fw_1 = pygame.image.load('example_run_1.png').convert_alpha()
+        pelda_fw_2 = pygame.image.load('example_run_2.png').convert_alpha()
+        pelda_fw_3 = pygame.image.load('example_run_3.png').convert_alpha()
+        self.pelda_fw = [pelda_fw_1, pelda_fw_2, pelda_fw_3]
+        pelda_b_1 = pygame.image.load('example_run_1.png').convert_alpha()
+        pelda_b_2 = pygame.image.load('example_run_1.png').convert_alpha()
+        pelda_b_3 = pygame.image.load('example_run_1.png').convert_alpha()
+        self.pelda_b = [pelda_b_1, pelda_b_2, pelda_b_3]
+        self.pelda_index = 0
+        self.pelda_forward = True
+        self.image = self.pelda_fw[self.pelda_index]
+        self.rect = self.image.get_rect(midbottom = (WIDTH / 2, HEIGHT - 100))
+        self.speed = 5
+
+
+
+
+def x_movement_animation(self):
+    if self.pelda_index < len(self.pelda_fw) - 1:
+        self.pelda_index += 0.2
+    else:
+        self.pelda_index = 0
+
+    if self.pelda_forward:
+        self.image = self.pelda_fw[int(self.pelda_index)]
+    else:
+        self.image = self.pelda_b[int(self.pelda_index)]
+
+
+
+
+def __init__(self):
+    super().__init__()
+    pelda_attack_1 = pygame.image.load('example_attack_1.png').convert_alpha()
+    pelda_attack_2 = pygame.image.load('example_attack_2.png').convert_alpha()
+    pelda_attack_3 = pygame.image.load('example_attack_3.png').convert_alpha()
+    self.pelda_attack[pelda_attack_1, pelda_attack_2, pelda_attack_3]
+    pelda.attack_mode = False
+
+
+
+
+
+def x_movement(self, dx):
+    self.rect.x += dx
+    self.x_movement_animation()
+
+
+
+
+def attack_animation(self):
+    if self.pelda_index < len(self.pelda_fw) -1:
+        self.pelda_index += 0.2
+    else:
+        self.pelda_index = 0
+    self.image = self.pelda_attack[int(self.pelda_index)]
+
+
+
+
+def pelda_input(self):
+    if keys[pygame.K_SPACE]:
+        self.attack_mode = True
+        self.attack_animation
+    else:
+        self.attack_mode = False
+        self.image = pygame.image.load('pelda_idle_0.png')
+
+
+
+
+class Fruit(pygame.sprite.Sprite):
+    def __init__(self, fruit_type):
+        super().__init__()
+        if fruit_type == 'pear':
+            self.image = pygame.image.load('img_pear.png')
+        elif fruit_type == 'banana':
+            self.image = pygame.image.load('img_banana.png')
+        else:
+            self.image = pygame.image.load('img_strawberry.png')
+        self.rect = self.image.get_rect(center = (random.randint(20, WIDTH - 20, ) - 20))
+
+
+
+
+    def destroy(self):
+    if self.rect.top > HEIGHT:
+        self.kill()
+
+
+
+
+    def update(self):
+        self.rect.y += 5
+        self.destroy()
+
+
+
+
+fruit_group = pygame.sprite.Group()
+
+
+
+
+
+fruit_timer = pygame.USEREVENT + 1
+pygame.time.set_timer(fruit_timer, 1000)
+
+
+
+
+running == True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running == False
+        if event.type == fruit_timer:
+            fruit_group.add(Fruit(random.choice(['pear', 'banana', 'strawberry'])))
+
+    fruit_group.draw(screen)
+    fruit_group.update()
+
+    collision_sprite()
+
+
+
+
+def collision_sprite():
+    if pelda.sprite.spritecollide(pelda.sprite, fruit_group, True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
