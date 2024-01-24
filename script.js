@@ -12,7 +12,6 @@ function createSplitScreenAnimation(textCard, codeCard, text_y, code_y) {
             start: def_start,
             end: def_end,
             scrub: true,
-            markers: true,
 
         },
     });
@@ -32,5 +31,5 @@ function createSplitScreenAnimation(textCard, codeCard, text_y, code_y) {
 
 // Sectiononkent letre kell hozni
 createSplitScreenAnimation("#textcard1", "#codeCard1", -15, -50);
-createSplitScreenAnimation("#textcard2", "#codeCard2", -15, 0);
+createSplitScreenAnimation("#textcard2", "#codeCard2", -15, -57);
 createSplitScreenAnimation("#textcard3", "#codeCard3", -15, 0);
