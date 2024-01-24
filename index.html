@@ -97,21 +97,17 @@
         <div class="textcard" id="textcard1">
             <article>
                 <h1>Mi is az a sprite?</h1>
-                <p>In Pygame, a sprite is an object that represents a game element. It can be an image, animation, or any other visual element in a game. Pygame provides a Sprite class that you can use to create and manage sprites efficiently.
-                    <br><br>
-                    Here's a basic example of defining a Pygame sprite:In Pygame, a sprite is an object that represents a game element. It can be an image, animation, or any other visual element in a game. Pygame provides a Sprite class that you can use to create and manage sprites efficiently.
-                    <br><br>
-                    Here's a basic example of defining a Pygame sprite:In Pygame, a sprite is an object that represents a game element. It can be an image, animation, or any other visual element in a game. Pygame provides a Sprite class that you can use to create and manage sprites efficiently.
-                    <br><br>
-                    Here's a basic example of defining a Pygame sprite:In Pygame, a sprite is an object that represents a game element. It can be an image, animation, or any other visual element in a game. Pygame provides a Sprite class that you can use to create and manage sprites efficiently.
-                    <br><br>
-                    Here's a basic example of defining a Pygame sprite:In Pygame, a sprite is an object that represents a game element. It can be an image, animation, or any other visual element in a game. Pygame provides a Sprite class that you can use to create and manage sprites efficiently.
-                    <br><br>
-                    Here's a basic example of defining a Pygame sprite:In Pygame, a sprite is an object that represents a game element. It can be an image, animation, or any other visual element in a game. Pygame provides a Sprite class that you can use to create and manage sprites efficiently.
-                    <br><br>
-                    Here's a basic example of defining a Pygame sprite:In Pygame, a sprite is an object that represents a game element. It can be an image, animation, or any other visual element in a game. Pygame provides a Sprite class that you can use to create and manage sprites efficiently.
-                    <br><br>
-                    Here's a basic example of defining a Pygame sprite:</p>
+                <p>Ez a kód egy Block nevű osztályt definiál Pythonban, amely valószínűleg a Pygame könyvtár használatára épül. A Block osztály létrehoz egy sprite-ot (grafikus objektumot) egy játékterületen. Néhány fontos dolog a kódban:
+                    <br>
+                    A __init__ függvény inicializálja az osztályt, és három bemeneti paramétert vár: color (szín), width (szélesség), és height (magasság).
+                    <br>
+                    A pygame.sprite.Sprite.init(self) hívja meg az ősosztály (Sprite) inicializáló függvényét.
+                    <br>
+                    Az image változó egy kétdimenziós felületet hoz létre a megadott színű és méretű téglalap alakú blokkal.
+                    <br>
+                    A rect változó tárolja a blokkhoz tartozó téglalap alakú területet.
+                    <br>
+                    Ez a kód részlet lényegében egy egyszerű blokk létrehozását valósítja meg a Pygame sprite rendszerén keresztül. A létrehozott blokkot később hozzá lehet adni egy játékterülethez vagy hasonló felhasználásra.</p>
             </article>
         </div>
 <div class="codecard" id="codeCard1">
@@ -140,22 +136,23 @@
         </div>
 
         <div class="codecard" id="codeCard2">
-    <pre><code class="language-python">class Block(pygame.sprite.Sprite):
-
-  # Constructor. Pass in the color of the block,
-  # and its x and y position
-  def __init__(self, color, width, height):
-     # Call the parent class (Sprite) constructor
-     pygame.sprite.Sprite.__init__(self)
-
-     # Create an image of the block, and fill it with a color.
-     # This could also be an image loaded from the disk.
-     self.image = pygame.Surface([width, height])
-     self.image.fill(color)
-
-     # Fetch the rectangle object that has the dimensions of the image
-     # Update the position of this object by setting the values of rect.x and rect.y
-     self.rect = self.image.get_rect()</code></pre>
+    <pre><code class="language-python">
+class pelda(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        pelda_fw_1 = pygame.image.load('example_run_1.png').convert_alpha()
+        pelda_fw_2 = pygame.image.load('example_run_2.png').convert_alpha()
+        pelda_fw_3 = pygame.image.load('example_run_3.png').convert_alpha()
+        self.pelda_fw = [pelda_fw_1, pelda_fw_2, pelda_fw_3]
+        pelda_b_1 = pygame.image.load('example_run_1.png').convert_alpha()
+        pelda_b_2 = pygame.image.load('example_run_1.png').convert_alpha()
+        pelda_b_3 = pygame.image.load('example_run_1.png').convert_alpha()
+        self.pelda_b = [pelda_b_1, pelda_b_2, pelda_b_3]
+        self.pelda_index = 0
+        self.pelda_forward = True
+        self.image = self.pelda_fw[self.pelda_index]
+        self.rect = self.image.get_rect(midbottom = (WIDTH / 2, HEIGHT - 100))
+        self.speed = 5</code></pre>
         </div>
 
     </section>
