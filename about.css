@@ -105,5 +105,25 @@ h1{
 }
 a {
     color: #c92d4d;
+    text-decoration: none;
+}
 
+#gabica {
+    background-image: url("src/About kepek/gabica.JPEG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: brightness(120%);
+
+}
+.link {
+    color: #e2ca2b;
+    font-size: 5em;
+    position: absolute;
+    top: 5vh;
+    left: 3vw;
+
+}
+
+.link:hover {
+    color: #ffaa00;
 }
