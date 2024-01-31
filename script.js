@@ -1,10 +1,9 @@
 gsap.registerPlugin(ScrollTrigger);
 const default_start = "top center"
 const default_end = "bottom center"
-
-
-
-function createSplitScreenAnimation(textCard, codeCard, text_y, code_y, startsat, endsat) {
+let mm = gsap.matchMedia()
+mm.add("(max-width: 719px)", {
+    function createSplitScreenAnimation(textCard, codeCard, text_y, code_y, startsat, endsat) {
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: textCard,
@@ -32,3 +31,4 @@ function createSplitScreenAnimation(textCard, codeCard, text_y, code_y, startsat
 createSplitScreenAnimation("#textcard1", "#codeCard1", -15, -35, default_start, default_end);
 createSplitScreenAnimation("#textcard2", "#codeCard2", -15, -55, default_start, default_end);
 createSplitScreenAnimation("#textcard3", "#codeCard3", -15, -40, default_start, default_end);
+})
