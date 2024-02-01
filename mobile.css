@@ -4,7 +4,6 @@ body {
 }
 
 
-@media (max-width: 719px) {
     .section2 {
         flex-direction: column;
         align-items: center;
@@ -33,4 +32,3 @@ body {
         order: -1;
         padding-left: 0;
     }
-}
