@@ -25,7 +25,6 @@ function createSplitScreenAnimation(textCard, codeCard, text_y, code_y) {
         endTrigger: textCard,
         end: def_end,
         pin: codeCard,
-        markers: true
     });
 }
 
