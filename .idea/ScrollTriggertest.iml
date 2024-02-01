@@ -4,7 +4,5 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="font-awesome" level="application" />
     <orderEntry type="library" name="jquery" level="application" />
-    <orderEntry type="library" name="@highlightjs/cdn-assets" level="application" />
-    <orderEntry type="library" name="parallax" level="application" />
   </component>
 </module>

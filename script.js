@@ -1,16 +1,18 @@
 gsap.registerPlugin(ScrollTrigger);
-const default_start = "top center"
-const default_end = "bottom center"
-let mm = gsap.matchMedia()
-mm.add("(max-width: 719px)", {
-    function createSplitScreenAnimation(textCard, codeCard, text_y, code_y, startsat, endsat) {
+const def_start = "top center";
+const def_end = "bottom center";
+
+
+
+
+function createSplitScreenAnimation(textCard, codeCard, text_y, code_y) {
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: textCard,
-            start: startsat,
-            end: endsat,
+            start: def_start,
+            end: def_end,
             scrub: true,
-            markers: true
+
         },
     });
 
@@ -19,16 +21,15 @@ mm.add("(max-width: 719px)", {
 
     ScrollTrigger.create({
         trigger: textCard,
-        start: startsat,
+        start: def_start,
         endTrigger: textCard,
-        end: endsat,
+        end: def_end,
         pin: codeCard,
         markers: true
     });
 }
 
 // Sectiononkent letre kell hozni
-createSplitScreenAnimation("#textcard1", "#codeCard1", -15, -35, default_start, default_end);
-createSplitScreenAnimation("#textcard2", "#codeCard2", -15, -55, default_start, default_end);
-createSplitScreenAnimation("#textcard3", "#codeCard3", -15, -40, default_start, default_end);
-})
+createSplitScreenAnimation("#textcard1", "#codeCard1", -15, -50);
+createSplitScreenAnimation("#textcard2", "#codeCard2", -15, -57);
+createSplitScreenAnimation("#textcard3", "#codeCard3", -25, -41.85);

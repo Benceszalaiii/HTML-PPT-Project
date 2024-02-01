@@ -16,22 +16,7 @@
             integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
             crossorigin="anonymous"
     />
-    <script>
-        // Function to check if the user is on a mobile device
-        function isMobileDevice() {
-            return /Mobi|Android/i.test(navigator.userAgent);
-        }
-
-        // Function to redirect if the user is on a mobile device
-        function redirectToMobile() {
-            if (isMobileDevice()) {
-                window.location.href = 'mobile.html';
-            }
-        }
-
-        // Call the redirection function when the page loads
-        window.onload = redirectToMobile;
-    </script>
+    <link rel="stylesheet" href="mobile.css">
 </head>
 <body>
 <!-- about -->
@@ -118,20 +103,20 @@
                     A Sprite osztály a Pygame nevű játékfejlesztési könyvtár része, és segítségével könnyen kezelheted és szervezheted a játékban megjelenő objektumokat. <br> A Sprite osztály az összetett játékokban rendkívül hasznos, mivel lehetővé teszi a játékobjektumok egységes kezelését és csoportokba rendezését. <br>
 
                     A Sprite osztályból származtatott saját osztályokat (pl. Player, Enemy, Bullet stb.) hozhatsz létre, és ezeket könnyen kezelheted a játéklogikában. A Pygame Sprite rendszere optimalizált, így hatékonyan lehet vele dolgozni.
-                <br>Ez a kód egy Block nevű osztályt definiál Pythonban, amely a Pygame könyvtár használatára épül. <br> A Block osztály létrehoz egy sprite-ot (grafikus objektumot) egy játékterületen. <br> Néhány fontos dolog a kódban:
+                    <br>Ez a kód egy Block nevű osztályt definiál Pythonban, amely a Pygame könyvtár használatára épül. <br> A Block osztály létrehoz egy sprite-ot (grafikus objektumot) egy játékterületen. <br> Néhány fontos dolog a kódban:
                     <br><br>
 
                     A __init__ függvény inicializálja az osztályt, és három bemeneti paramétert vár: color (szín), width (szélesség), és height (magasság)
-                <br><br>
+                    <br><br>
 
                     A pygame.sprite.Sprite.init(self) hívja meg az ősosztály (Sprite) inicializáló függvényét
-                <br><br>
+                    <br><br>
 
                     Az image változó egy kétdimenziós felületet hoz létre a megadott színű és méretű téglalap alakú blokkal
-                <br><br>
+                    <br><br>
 
                     A rect változó tárolja a blokkhoz tartozó téglalap alakú területet
-                <br><br>
+                    <br><br>
 
                     Ez a kód részlet lényegében egy egyszerű blokk létrehozását valósítja meg a Pygame sprite rendszerén keresztül. A létrehozott blokkot később hozzá lehet adni egy játékterülethez vagy hasonló felhasználásra
 
@@ -139,7 +124,7 @@
 
             </article>
         </div>
-<div class="codecard" id="codeCard1">
+        <div class="codecard" id="codeCard1">
     <pre><code class="language-python">
         class Block(pygame.sprite.Sprite):
             def __init__(self, color, width, height):
@@ -150,7 +135,7 @@
 
     </code>
     </pre>
-</div>
+        </div>
 
     </section>
 
@@ -161,21 +146,21 @@
                 <h1>Példa a Sprite-ok használatára</h1>
                 <p>Ez a kódrészlet egy egyszerű Pygame alkalmazást mutat be, ahol egy Sprite objektumot hozunk létre és mozgatunk véletlenszerűen. <br>
 
-A MySprite osztály a "pygame.sprite.Sprite" osztályból származik. Ez azt jelenti, hogy a MySprite osztály egy típusa a Pygame által biztosított Sprite osztály leszármazottja. <br>
+                    A MySprite osztály a "pygame.sprite.Sprite" osztályból származik. Ez azt jelenti, hogy a MySprite osztály egy típusa a Pygame által biztosított Sprite osztály leszármazottja. <br>
 
-Az osztályban az __init__ metódusban inicializáljuk a Sprite objektumot. <br> A super().__init__() segítségével hívjuk meg a szülőosztály konstruktorát, ami beállítja az alapértelmezett Sprite tulajdonságokat. <br>
+                    Az osztályban az __init__ metódusban inicializáljuk a Sprite objektumot. <br> A super().__init__() segítségével hívjuk meg a szülőosztály konstruktorát, ami beállítja az alapértelmezett Sprite tulajdonságokat. <br>
 
-A self.image változó egy pygame.Surface objektum, amely egy kép felületét reprezentálja. Ebben az esetben egy 50x50 pixel méretű piros négyzetet hozunk létre (self.image.fill((255, 0, 0))). <br>
+                    A self.image változó egy pygame.Surface objektum, amely egy kép felületét reprezentálja. Ebben az esetben egy 50x50 pixel méretű piros négyzetet hozunk létre (self.image.fill((255, 0, 0))). <br>
 
-A self.rect változó egy olyan téglalapot (rect) reprezentál, amely a Sprite pozícióját és méretét tartalmazza. Ezt az értéket a self.image.get_rect() hívással kapjuk meg, majd beállítjuk a pozícióját a képernyő közepére (self.rect.center = (screen_width // 2, screen_height // 2)).
+                    A self.rect változó egy olyan téglalapot (rect) reprezentál, amely a Sprite pozícióját és méretét tartalmazza. Ezt az értéket a self.image.get_rect() hívással kapjuk meg, majd beállítjuk a pozícióját a képernyő közepére (self.rect.center = (screen_width // 2, screen_height // 2)).
 
-<br>Az update metódusban frissítjük a Sprite objektumot. Ebben a példában a rect.x és rect.y értékeit véletlenszerűen változtatjuk meg, így a Sprite objektum véletlenszerűen mozogni fog.
+                    <br>Az update metódusban frissítjük a Sprite objektumot. Ebben a példában a rect.x és rect.y értékeit véletlenszerűen változtatjuk meg, így a Sprite objektum véletlenszerűen mozogni fog.
 
-<br>Létrehozunk egy pygame.sprite.Group objektumot, ami egy gyűjtőhely a Sprite objektumok számára.
+                    <br>Létrehozunk egy pygame.sprite.Group objektumot, ami egy gyűjtőhely a Sprite objektumok számára.
 
-<br>Létrehozunk egy MySprite objektumot (my_sprite), majd hozzáadjuk a Sprite csoportunkhoz a all_sprites.add(my_sprite) sorral.
+                    <br>Létrehozunk egy MySprite objektumot (my_sprite), majd hozzáadjuk a Sprite csoportunkhoz a all_sprites.add(my_sprite) sorral.
 
-<br>Ez az egyszerű példa egy ablakban megjelenő piros négyzetet mutat be, amely véletlenszerűen mozog. A Pygame Group osztály segítségével könnyen kezelhetjük és frissíthetjük az összes Sprite objektumot egyetlen lépésben.</p>
+                    <br>Ez az egyszerű példa egy ablakban megjelenő piros négyzetet mutat be, amely véletlenszerűen mozog. A Pygame Group osztály segítségével könnyen kezelhetjük és frissíthetjük az összes Sprite objektumot egyetlen lépésben.</p>
 
 
             </article>
@@ -211,26 +196,26 @@ A self.rect változó egy olyan téglalapot (rect) reprezentál, amely a Sprite 
             <article>
                 <p>PlayerSprite osztály definiálása:
 
-Az osztály a pygame.sprite.Sprite osztályból származik, ami azt jelenti, hogy ez egy Pygame Sprite objektum. <br><br>
-A __init__ metódusban inicializáljuk a játékobjektumot.<br>
-A self.image változó egy 50x50 pixel méretű kék négyzetet reprezentáló felület (pygame.Surface). Ez lesz a karakterünk megjelenése.<br><br>
-A self.rect változó egy olyan téglalapot reprezentál, amely a karakter pozícióját és méretét tárolja. A pozíciót a képernyő közepén helyezzük el (self.rect.center).
-self.y_speed változó tárolja a karakter Y irányú sebességét, amely az ugrást fogja irányítani.<br>
-<br>Az update metódus:<br>
+                    Az osztály a pygame.sprite.Sprite osztályból származik, ami azt jelenti, hogy ez egy Pygame Sprite objektum. <br><br>
+                    A __init__ metódusban inicializáljuk a játékobjektumot.<br>
+                    A self.image változó egy 50x50 pixel méretű kék négyzetet reprezentáló felület (pygame.Surface). Ez lesz a karakterünk megjelenése.<br><br>
+                    A self.rect változó egy olyan téglalapot reprezentál, amely a karakter pozícióját és méretét tárolja. A pozíciót a képernyő közepén helyezzük el (self.rect.center).
+                    self.y_speed változó tárolja a karakter Y irányú sebességét, amely az ugrást fogja irányítani.<br>
+                    <br>Az update metódus:<br>
 
-A metódus felelős a játékobjektum frissítéséért. Ebben az esetben a karakter felfelé mozog a self.y_speed sebesség értékének megfelelően.
-Szimuláljuk a gravitációt: ha a karakter a levegőben van (self.rect.y kisebb, mint a képernyő magassága mínusz a karakter magassága), akkor a gravitáció hatására gyorsul felfelé, különben a karakter a talajon van, és a Y sebessége nullára áll be, tartva a karaktert a talajon.
-<br><br>A jump metódus:<br>
+                    A metódus felelős a játékobjektum frissítéséért. Ebben az esetben a karakter felfelé mozog a self.y_speed sebesség értékének megfelelően.
+                    Szimuláljuk a gravitációt: ha a karakter a levegőben van (self.rect.y kisebb, mint a képernyő magassága mínusz a karakter magassága), akkor a gravitáció hatására gyorsul felfelé, különben a karakter a talajon van, és a Y sebessége nullára áll be, tartva a karaktert a talajon.
+                    <br><br>A jump metódus:<br>
 
-A metódus beállítja a karakter ugrását. Az ugrás csak akkor lehetséges, ha a karakter a talajon van (azaz self.rect.y egyenlő a képernyő magassága mínusz a karakter magassága).
-<br><br>all_sprites Sprite csoport létrehozása:<br>
+                    A metódus beállítja a karakter ugrását. Az ugrás csak akkor lehetséges, ha a karakter a talajon van (azaz self.rect.y egyenlő a képernyő magassága mínusz a karakter magassága).
+                    <br><br>all_sprites Sprite csoport létrehozása:<br>
 
-Egy pygame.sprite.Group objektumot hozunk létre, amely egy gyűjtőhely a Sprite objektumokhoz.<br><br>
-Egy PlayerSprite objektum létrehozása és a csoportba adása:<br>
+                    Egy pygame.sprite.Group objektumot hozunk létre, amely egy gyűjtőhely a Sprite objektumokhoz.<br><br>
+                    Egy PlayerSprite objektum létrehozása és a csoportba adása:<br>
 
-Egy player nevű PlayerSprite objektumot hozunk létre.<br>
-Hozzáadjuk a player objektumot a all_sprites csoportunkhoz a all_sprites.add(player) sorral.<br>
-Ez a kódrészlet egy karaktert reprezentál, amely képes ugrani és a képernyő tetején visszaesni a talajra, szimulálva a gravitációt. A karakter mozgatásához a SPACE billentyűt lehet lenyomni.</p>
+                    Egy player nevű PlayerSprite objektumot hozunk létre.<br>
+                    Hozzáadjuk a player objektumot a all_sprites csoportunkhoz a all_sprites.add(player) sorral.<br>
+                    Ez a kódrészlet egy karaktert reprezentál, amely képes ugrani és a képernyő tetején visszaesni a talajra, szimulálva a gravitációt. A karakter mozgatásához a SPACE billentyűt lehet lenyomni.</p>
             </article>
         </div>
 
@@ -296,8 +281,5 @@ Ez a kódrészlet egy karaktert reprezentál, amely képes ugrani és a képerny
         handleScroll();
     });
 </script>
-<script src="gsap/gsap.min.js"></script>
-<script src="gsap/ScrollTrigger.min.js"></script>
-<script src="script.js"></script>
 </body>
 </html>

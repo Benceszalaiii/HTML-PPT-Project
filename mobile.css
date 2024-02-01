@@ -1,0 +1,36 @@
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+@media (max-width: 719px) {
+    .section2 {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .section2 .textcard {
+        width: 95%;
+        max-height: 60vh;
+        max-width: 95%;
+        overflow: auto;
+    }
+
+    .section2 code {
+        width: 85%;
+        max-width: 85vw;
+        max-height: 50vh;
+        margin-left: 0;
+    }
+
+    .section2 {
+        overflow-y: hidden;
+    }
+
+    .section2 .codecard {
+        order: -1;
+        padding-left: 0;
+    }
+}
