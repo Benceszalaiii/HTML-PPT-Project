@@ -142,11 +142,11 @@
 <div class="codecard" id="codeCard1">
     <pre><code class="language-python">
         class Block(pygame.sprite.Sprite):
-            def __init__(self, color, width, height):
-                pygame.sprite.Sprite.__init__(self)
-                self.image = pygame.Surface([width, height])
-                self.image.fill(color)
-                self.rect = self.image.get_rect()
+def __init__(self, color, width, height):
+    pygame.sprite.Sprite.__init__(self)
+    self.image = pygame.Surface([width, height])
+    self.image.fill(color)
+    self.rect = self.image.get_rect()
 
     </code>
     </pre>
@@ -183,22 +183,22 @@ A self.rect változó egy olyan téglalapot (rect) reprezentál, amely a Sprite 
 
         <div class="codecard" id="codeCard2">
     <pre><code class="language-python">
-        class MySprite(pygame.sprite.Sprite):
-            def __init__(self):
-                super().__init__()
-                self.image = pygame.Surface((50, 50))
-                self.image.fill((255, 0, 0))
+class MySprite(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        self.image = pygame.Surface((50, 50))
+        self.image.fill((255, 0, 0))
 
-                self.rect = self.image.get_rect()
-                self.rect.center = (screen_width // 2, screen_height // 2)
+        self.rect = self.image.get_rect()
+        self.rect.center = (screen_width // 2, screen_height // 2)
 
-                def update(self):
-                    self.rect.x += random.randint(-5, 5)
-                    self.rect.y += random.randint(-5, 5)
+    def update(self):
+        self.rect.x += random.randint(-5, 5)
+        self.rect.y += random.randint(-5, 5)
 
-                all_sprites = pygame.sprite.Group()
-                my_sprite = MySprite()
-                all_sprites.add(my_sprite)
+        all_sprites = pygame.sprite.Group()
+        my_sprite = MySprite()
+        all_sprites.add(my_sprite)
 
 
 </code></pre>
@@ -237,30 +237,30 @@ Ez a kódrészlet egy karaktert reprezentál, amely képes ugrani és a képerny
         <div class="codecard" id="codeCard3">
     <pre><code class="language-python">
         class PlayerSprite(pygame.sprite.Sprite):
-            def __init__(self):
-                super().__init__()
-                self.image = pygame.Surface((50, 50))
-                self.image.fill((0, 128, 255))
-                self.rect = self.image.get_rect()
-                self.rect.center = (screen_width // 2, screen_height // 2)
-                self.y_speed = 0
+def __init__(self):
+    super().__init__()
+    self.image = pygame.Surface((50, 50))
+    self.image.fill((0, 128, 255))
+    self.rect = self.image.get_rect()
+    self.rect.center = (screen_width // 2, screen_height // 2)
+    self.y_speed = 0
 
-            def update(self):
-                self.rect.y += self.y_speed
-                if self.rect.y < screen_height - 50:
-                    self.y_speed += 1
-                else:
-                    self.y_speed = 0
-                    self.rect.y = screen_height - 50
+def update(self):
+    self.rect.y += self.y_speed
+    if self.rect.y < screen_height - 50:
+        self.y_speed += 1
+    else:
+        self.y_speed = 0
+        self.rect.y = screen_height - 50
 
-            def jump(self):
-                if self.rect.y == screen_height - 50:
-                    self.y_speed = -15
+    def jump(self):
+        if self.rect.y == screen_height - 50:
+            self.y_speed = -15
 
-        all_sprites = pygame.sprite.Group()
+    all_sprites = pygame.sprite.Group()
 
-        player = PlayerSprite()
-        all_sprites.add(player)
+    player = PlayerSprite()
+    all_sprites.add(player)
     </code></pre>
         </div>
 
