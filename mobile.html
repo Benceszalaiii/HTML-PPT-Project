@@ -19,32 +19,10 @@
     <link rel="stylesheet" href="mobile.css">
 </head>
 <body>
-<!-- about -->
-<div class="about">
-    <a class="bg_links social portfolio" href="https://www.buymeacoffee.com/benceszalaii" target="_blank">
-        <span class="icon"></span>
-    </a>
-    <a class="bg_links social dribbble" href="https://github.com/Benceszalaiii/HTML-PPT-Project" target="_blank">
-        <span class="icon"></span>
-    </a>
-    <a class="bg_links social github" href="https://github.com/Benceszalaiii/PygameProject" target="_blank">
-        <span class="icon"></span>
-    </a>
-    <a class="bg_links logo"></a>
-</div>
-
 
 <nav>
     <div class="menu">
-        <p class="website_name">pygame</p>
-        <div class="menu_links">
-            <a href="https://www.pygame.org/docs/ref/sprite.html" target="_blank" class="link">dokumentáció</a>
-            <a href="about.html" class="link">Csapattagok</a>
-            <a href="https://www.youtube.com/@sulipy" target="_blank" class="link">sulipy</a>
-        </div>
-        <div class="menu_icon">
-            <span class="icon"></span>
-        </div>
+        <p class="website_name"><a href="about.html" class="link">Csapattagok</a></p>
     </div>
 </nav>
 
@@ -126,12 +104,12 @@
         </div>
         <div class="codecard" id="codeCard1">
     <pre><code class="language-python">
-        class Block(pygame.sprite.Sprite):
-            def __init__(self, color, width, height):
-                pygame.sprite.Sprite.__init__(self)
-                self.image = pygame.Surface([width, height])
-                self.image.fill(color)
-                self.rect = self.image.get_rect()
+class Block(pygame.sprite.Sprite):
+      def __init__(self, color, width, height):
+          pygame.sprite.Sprite.__init__(self)
+          self.image = pygame.Surface([width, height])
+          self.image.fill(color)
+          self.rect = self.image.get_rect()
 
     </code>
     </pre>
@@ -168,22 +146,22 @@
 
         <div class="codecard" id="codeCard2">
     <pre><code class="language-python">
-        class MySprite(pygame.sprite.Sprite):
-            def __init__(self):
-                super().__init__()
-                self.image = pygame.Surface((50, 50))
-                self.image.fill((255, 0, 0))
+    class MySprite(pygame.sprite.Sprite):
+         def __init__(self):
+            super().__init__()
+            self.image = pygame.Surface((50, 50))
+            self.image.fill((255, 0, 0))
 
-                self.rect = self.image.get_rect()
-                self.rect.center = (screen_width // 2, screen_height // 2)
+            self.rect = self.image.get_rect()
+            self.rect.center = (screen_width // 2, screen_height // 2)
 
-                def update(self):
-                    self.rect.x += random.randint(-5, 5)
-                    self.rect.y += random.randint(-5, 5)
+         def update(self):
+            self.rect.x += random.randint(-5, 5)
+            self.rect.y += random.randint(-5, 5)
 
-                all_sprites = pygame.sprite.Group()
-                my_sprite = MySprite()
-                all_sprites.add(my_sprite)
+            all_sprites = pygame.sprite.Group()
+            my_sprite = MySprite()
+            all_sprites.add(my_sprite)
 
 
 </code></pre>
@@ -221,31 +199,31 @@
 
         <div class="codecard" id="codeCard3">
     <pre><code class="language-python">
-        class PlayerSprite(pygame.sprite.Sprite):
-            def __init__(self):
-                super().__init__()
-                self.image = pygame.Surface((50, 50))
-                self.image.fill((0, 128, 255))
-                self.rect = self.image.get_rect()
-                self.rect.center = (screen_width // 2, screen_height // 2)
+    class PlayerSprite(pygame.sprite.Sprite):
+        def __init__(self):
+            super().__init__()
+            self.image = pygame.Surface((50, 50))
+            self.image.fill((0, 128, 255))
+            self.rect = self.image.get_rect()
+            self.rect.center = (screen_width // 2, screen_height // 2)
+            self.y_speed = 0
+
+        def update(self):
+             self.rect.y += self.y_speed
+             if self.rect.y < screen_height - 50:
+                self.y_speed += 1
+             else:
                 self.y_speed = 0
+                self.rect.y = screen_height - 50
 
-            def update(self):
-                self.rect.y += self.y_speed
-                if self.rect.y < screen_height - 50:
-                    self.y_speed += 1
-                else:
-                    self.y_speed = 0
-                    self.rect.y = screen_height - 50
+        def jump(self):
+             if self.rect.y == screen_height - 50:
+                self.y_speed = -15
 
-            def jump(self):
-                if self.rect.y == screen_height - 50:
-                    self.y_speed = -15
+    all_sprites = pygame.sprite.Group()
 
-        all_sprites = pygame.sprite.Group()
-
-        player = PlayerSprite()
-        all_sprites.add(player)
+    player = PlayerSprite()
+    all_sprites.add(player)
     </code></pre>
         </div>
 

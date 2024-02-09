@@ -2,7 +2,9 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-
+body::-webkit-scrollbar {
+    display: none;
+}
 
     .section2 {
         flex-direction: column;
@@ -32,3 +34,41 @@ body {
         order: -1;
         padding-left: 0;
     }
+.textcard::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 25px;
+    height: 1vh;
+}
+
+.textcard::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.16);
+    border-radius: 50px;
+}
+
+.textcard::-webkit-scrollbar-track {
+    margin-right: 2vw;
+    background: transparent;
+    border-radius: 10px;
+}
+
+.textcard::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.34);
+}
+
+.textcard::-webkit-scrollbar {
+    width: 10px;
+}
+
+.textcard::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+code {
+    margin-right: 5vw;
+    margin-left: 0 !important;
+}
+.codecard{
+    align-self: center;
+    padding-left: 10vw;
+    margin-left: 5vw;
+}
